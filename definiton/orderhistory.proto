@@ -1,0 +1,32 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+package definiton;
+
+
+service SGHistory {
+    rpc GetUserHistory (HistoryRequest) returns (stream HistoryResponse) {
+    }
+}
+
+message HistoryRequest {
+    string gid = 1;
+}
+
+message HistoryMap {
+    string gid = 1;
+    google.protobuf.Timestamp orderDate = 2;
+    string orderID = 3;
+    string entree = 4;
+    string customerId = 5;
+
+}
+
+message HistoryResponse {
+    repeated HistoryMap collection = 1;
+}
+
+//run to compile protobuf message into a go object
+//protoc -I definiton/ definiton/orderhistory.proto --go_out=plugins=grpc:definiton
+
+//with grpc gateway
+//protoc -I google/api/ -I google/api/ -I definiton/ --go_out=plugins=grpc:definiton,google/api

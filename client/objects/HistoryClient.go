@@ -2,7 +2,7 @@ package objects
 
 import (
 	"context"
-	sgutils "github.com/polyglotDataNerd/zib-Go-Utils/utils"
+	sgutils "github.com/polyglotDataNerd/zib-Go-utils/utils"
 	pb "github.com/sweetgreen/sg-gRPC-orderhistory/definiton"
 	"github.com/sweetgreen/sg-gRPC-orderhistory/utils"
 	"google.golang.org/grpc"

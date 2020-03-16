@@ -4,7 +4,7 @@ import (
 	"context"
 	"google.golang.org/grpc"
 	"time"
-	sgutils "github.com/polyglotDataNerd/zib-Go-Utils/utils"
+	sgutils "github.com/polyglotDataNerd/zib-Go-utils/utils"
 
 )
 //https://medium.com/@shijuvar/writing-grpc-interceptors-in-go-bf3e7671fe48

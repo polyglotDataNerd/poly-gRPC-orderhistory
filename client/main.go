@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/golang/protobuf/proto"
-	p "github.com/polyglotDataNerd/zib-Go-Utils/utils"
+	p "github.com/polyglotDataNerd/zib-Go-utils/utils"
 	"github.com/sweetgreen/sg-gRPC-orderhistory/client/objects"
 	pb "github.com/sweetgreen/sg-gRPC-orderhistory/definiton"
 	"net/http"

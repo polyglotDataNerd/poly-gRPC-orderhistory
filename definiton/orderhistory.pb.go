@@ -180,7 +180,9 @@ func init() {
 	proto.RegisterType((*HistoryResponse)(nil), "definiton.HistoryResponse")
 }
 
-func init() { proto.RegisterFile("orderhistory.proto", fileDescriptor_fd279eed690ecc7b) }
+func init() {
+	proto.RegisterFile("orderhistory.proto", fileDescriptor_fd279eed690ecc7b)
+}
 
 var fileDescriptor_fd279eed690ecc7b = []byte{
 	// 279 bytes of a gzipped FileDescriptorProto
@@ -206,11 +208,11 @@ var fileDescriptor_fd279eed690ecc7b = []byte{
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ grpc.ClientConn
+var _ grpc.ClientConnInterface
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
+const _ = grpc.SupportPackageIsVersion6
 
 // SGHistoryClient is the client API for SGHistory service.
 //
@@ -220,10 +222,10 @@ type SGHistoryClient interface {
 }
 
 type sGHistoryClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewSGHistoryClient(cc *grpc.ClientConn) SGHistoryClient {
+func NewSGHistoryClient(cc grpc.ClientConnInterface) SGHistoryClient {
 	return &sGHistoryClient{cc}
 }
 

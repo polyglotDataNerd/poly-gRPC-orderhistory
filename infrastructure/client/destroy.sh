@@ -10,7 +10,7 @@ CURRENTDATE="$(date  +%Y)"
 environment=$1
 
 # INFRASTRUCTURE
-aws s3 cp s3://sweetgreen-bigdata-utility/terraform/orderhistory/$environment/client/infra/$CURRENTDATE ~/sg-gRPC-orderhistory/infrastructure/client/infra  --recursive --sse --quiet --include "*"
+aws s3 cp s3://bigdata-utility/terraform/orderhistory/$environment/client/infra/$CURRENTDATE ~/sg-gRPC-orderhistory/infrastructure/client/infra  --recursive --sse --quiet --include "*"
 
 export TF_VAR_awsaccess=$AWS_ACCESS_KEY_ID
 export TF_VAR_awssecret=$AWS_SECRET_ACCESS_KEY
@@ -22,11 +22,11 @@ terraform init
 terraform destroy -auto-approve
 
 #copy tfstate files to s3
-aws s3 cp ~/sg-gRPC-orderhistory/infrastructure/client/infra/ s3://sweetgreen-bigdata-utility/terraform/orderhistory/$environment/client/infra/$CURRENTDATE/  --recursive --sse --quiet --exclude "*" --include "*terraform.tfstate*"
+aws s3 cp ~/sg-gRPC-orderhistory/infrastructure/client/infra/ s3://bigdata-utility/terraform/orderhistory/$environment/client/infra/$CURRENTDATE/  --recursive --sse --quiet --exclude "*" --include "*terraform.tfstate*"
 
 
 # APPLICATION SERVICE
-aws s3 cp s3://sweetgreen-bigdata-utility/terraform/orderhistory/$environment/client/app/$CURRENTDATE ~/sg-gRPC-orderhistory/infrastructure/client/app  --recursive --sse --quiet --include "*"
+aws s3 cp s3://bigdata-utility/terraform/orderhistory/$environment/client/app/$CURRENTDATE ~/sg-gRPC-orderhistory/infrastructure/client/app  --recursive --sse --quiet --include "*"
 
 export TF_VAR_awsaccess=$AWS_ACCESS_KEY_ID
 export TF_VAR_awssecret=$AWS_SECRET_ACCESS_KEY
@@ -38,6 +38,6 @@ terraform init
 terraform destroy -auto-approve
 
 #copy tfstate files to s3
-aws s3 cp ~/sg-gRPC-orderhistory/infrastructure/client/app/ s3://sweetgreen-bigdata-utility/terraform/orderhistory/$environment/client/app/$CURRENTDATE/  --recursive --sse --quiet --exclude "*" --include "*terraform.tfstate*"
+aws s3 cp ~/sg-gRPC-orderhistory/infrastructure/client/app/ s3://bigdata-utility/terraform/orderhistory/$environment/client/app/$CURRENTDATE/  --recursive --sse --quiet --exclude "*" --include "*terraform.tfstate*"
 
 cd ~/sg-gRPC-orderhistory/

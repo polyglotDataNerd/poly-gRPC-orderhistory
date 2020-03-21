@@ -13,7 +13,7 @@ environment=$1
 image="447388672287.dkr.ecr.us-west-2.amazonaws.com/sg-orderhistory-$environment:$EpochTag"
 
 # INFRASTRUCTURE
-aws s3 cp s3://sweetgreen-bigdata-utility/terraform/orderhistory/$environment/server/infra/$CURRENTDATE ~/sg-gRPC-orderhistory/infrastructure/server/infra --recursive --sse --quiet --include "*"
+aws s3 cp s3://bigdata-utility/terraform/orderhistory/$environment/server/infra/$CURRENTDATE ~/sg-gRPC-orderhistory/infrastructure/server/infra --recursive --sse --quiet --include "*"
 # infra variables
 export TF_VAR_awsaccess=$AWS_ACCESS_KEY_ID
 export TF_VAR_awssecret=$AWS_SECRET_ACCESS_KEY
@@ -29,7 +29,7 @@ terraform apply -auto-approve
 terraform refresh
 
 #copy tfstate files to s3
-aws s3 cp ~/sg-gRPC-orderhistory/infrastructure/server/infra/ s3://sweetgreen-bigdata-utility/terraform/orderhistory/$environment/server/infra/$CURRENTDATE/ --recursive --sse --quiet --exclude "*" --include "*terraform.tfstate*"
+aws s3 cp ~/sg-gRPC-orderhistory/infrastructure/server/infra/ s3://bigdata-utility/terraform/orderhistory/$environment/server/infra/$CURRENTDATE/ --recursive --sse --quiet --exclude "*" --include "*terraform.tfstate*"
 
 # DOCKER BUILD
 cd ~/sg-gRPC-orderhistory/infrastructure/server/build
@@ -47,7 +47,7 @@ eval "$(aws ecr get-login --region us-west-2 --no-include-email)"
 docker push $image
 
 # APPLICATION SERVICE
-aws s3 cp s3://sweetgreen-bigdata-utility/terraform/orderhistory/$environment/server/app/$CURRENTDATE ~/sg-gRPC-orderhistory/infrastructure/server/app --recursive --sse --quiet --include "*"
+aws s3 cp s3://bigdata-utility/terraform/orderhistory/$environment/server/app/$CURRENTDATE ~/sg-gRPC-orderhistory/infrastructure/server/app --recursive --sse --quiet --include "*"
 
 # app variables
 export TF_VAR_awsaccess=$AWS_ACCESS_KEY_ID
@@ -64,6 +64,6 @@ terraform apply -auto-approve
 terraform refresh
 
 #copy tfstate files to s3
-aws s3 cp ~/sg-gRPC-orderhistory/infrastructure/server/app/ s3://sweetgreen-bigdata-utility/terraform/orderhistory/$environment/server/app/$CURRENTDATE/ --recursive --sse --quiet --exclude "*" --include "*terraform.tfstate*"
+aws s3 cp ~/sg-gRPC-orderhistory/infrastructure/server/app/ s3://bigdata-utility/terraform/orderhistory/$environment/server/app/$CURRENTDATE/ --recursive --sse --quiet --exclude "*" --include "*terraform.tfstate*"
 
 cd ~/sg-gRPC-orderhistory/

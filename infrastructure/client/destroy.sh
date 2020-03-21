@@ -3,8 +3,8 @@
 # source ~/sg-gRPC-orderhistory/infrastructure/environment/consumer_ecs_infra_destroy.sh 'production'
 
 
-AWS_ACCESS_KEY_ID=$(aws ssm get-parameters --names /s3/sweetgreen/admin/AccessKey --query Parameters[0].Value --with-decryption --output text)
-AWS_SECRET_ACCESS_KEY=$(aws ssm get-parameters --names /s3/sweetgreen/admin/SecretKey --query Parameters[0].Value --with-decryption --output text)
+AWS_ACCESS_KEY_ID=$(aws ssm get-parameters --names /s3/admin/AccessKey --query Parameters[0].Value --with-decryption --output text)
+AWS_SECRET_ACCESS_KEY=$(aws ssm get-parameters --names /s3/admin/SecretKey --query Parameters[0].Value --with-decryption --output text)
 CURRENTDATE="$(date  +%Y)"
 #shell parameter for env.
 environment=$1

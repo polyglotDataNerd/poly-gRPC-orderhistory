@@ -4,13 +4,13 @@ gRPC client/server framework using protobuf as alternative to JSON and RESTful s
 
 Dependencies:
 * [GoLang 1.12.8](https://golang.org/)
-* [sg GO Utils library](https://github.com/polyglotDataNerd/zib-Go-utils)
+* [GO Utils library](https://github.com/polyglotDataNerd/zib-Go-utils)
 * [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html)
 * [AWS Managed Cassandra Service](https://aws.amazon.com/mcs/)
 * [gRPC](https://grpc.io/docs/guides/)
 * [protocbuf](https://developers.google.com/protocol-buffers)
 
-TODO: (Verbose Doc) Proof of concept order history service using the universal user guid provided in the SGID service that powers Braze
+TODO: (Verbose Doc) Proof of concept order history service using the universal user guid provided by DynamoDB ID service that powers a user history.
 
 **Server**
 

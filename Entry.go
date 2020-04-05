@@ -18,7 +18,7 @@ func main() {
 	var userorders []*pb.HistoryMap
 	var collectHistory []map[string]interface{}
 	var wg sync.WaitGroup
-	uuid := "d35e848c-f44e-11e9-abac-8d25e63738f4"
+	uuid := ""
 
 	props := p.Mutator{
 		SetterKeyEnv:    "host",

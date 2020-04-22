@@ -36,11 +36,11 @@ func main() {
 	client := c.CQL{
 		CQLProps: clientConfig,
 		Wg:       wg,
-		SSLPath:  "/Users/gerardbartolome/.mac-ca-roots",
+		SSLPath:  "~/.mac-ca-roots",
 	}
 
 	session := client.CassandraSession()
-	query := "SELECT * FROM sg_cass.order_history where gid =" + "'" + uuid + "'"
+	query := "SELECT * FROM cass.order_history where gid =" + "'" + uuid + "'"
 	resultSet, rerr := client.CassReadOrderHistory(query, session)
 	if rerr != nil {
 		p.Info.Println(rerr)
@@ -62,7 +62,7 @@ func main() {
 	}
 	data, err := proto.Marshal(&collection)
 	if err != nil {
-		p.Error.Println("you suck")
+		p.Error.Println(err)
 	}
 	/*byte array wireframe serialized*/
 	/*deserialize*/

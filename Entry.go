@@ -4,9 +4,9 @@ import (
 	"github.com/fatih/structs"
 	"github.com/golang/protobuf/proto"
 	types "github.com/golang/protobuf/ptypes"
-	aws "github.com/polyglotDataNerd/zib-Go-utils/aws"
-	c "github.com/polyglotDataNerd/zib-Go-utils/database"
-	p "github.com/polyglotDataNerd/zib-Go-utils/utils"
+	aws "github.com/polyglotDataNerd/poly-Go-utils/aws"
+	c "github.com/polyglotDataNerd/poly-Go-utils/database"
+	p "github.com/polyglotDataNerd/poly-Go-utils/utils"
 	pb "github.com/sweetgreen/sg-gRPC-orderhistory/definiton"
 	"sync"
 )

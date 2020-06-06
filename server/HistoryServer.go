@@ -3,9 +3,9 @@ package main
 import (
 	"github.com/gocql/gocql"
 	types "github.com/golang/protobuf/ptypes"
-	aws "github.com/polyglotDataNerd/zib-Go-utils/aws"
-	c "github.com/polyglotDataNerd/zib-Go-utils/database"
-	p "github.com/polyglotDataNerd/zib-Go-utils/utils"
+	aws "github.com/polyglotDataNerd/poly-Go-utils/aws"
+	c "github.com/polyglotDataNerd/poly-Go-utils/database"
+	p "github.com/polyglotDataNerd/poly-Go-utils/utils"
 	pb "github.com/sweetgreen/sg-gRPC-orderhistory/definiton"
 	"github.com/sweetgreen/sg-gRPC-orderhistory/utils"
 	"google.golang.org/grpc"

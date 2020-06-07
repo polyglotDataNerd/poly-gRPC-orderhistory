@@ -61,9 +61,9 @@ func collect(uuid string) *pb.HistoryResponse {
 	if rerr != nil {
 		p.Error.Println(rerr)
 	}
-	for _, v := range resultSet {
+	for i, v := range resultSet {
 		wg.Add(1)
-		go func() {
+		go func(i int) {
 			defer wg.Done()
 			timeConvert, _ := types.TimestampProto(v.OrderDate)
 			userorders = append(userorders, &pb.HistoryMap{
@@ -73,7 +73,7 @@ func collect(uuid string) *pb.HistoryResponse {
 				Entree:     v.Entree,
 				CustomerId: v.CustomerID,
 			})
-		}()
+		}(i)
 		wg.Wait()
 	}
 	collection.Collection = userorders

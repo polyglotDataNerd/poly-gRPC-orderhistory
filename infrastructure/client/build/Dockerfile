@@ -83,7 +83,7 @@ RUN curl -OL https://github.com/google/protobuf/releases/download/v3.11.2/protoc
     && go get -u github.com/golang/protobuf/proto \
     && echo $PATH
 
-RUN git clone -b master https://github.com/sweetgreen/sg-gRPC-orderhistory.git \
+RUN git clone -b master https://github.com/polyglotDataNerd/poly-gRPC-orderhistory.git \
     && cd sg-gRPC-orderhistory \
     && go get -d -v ./... \
     && go get -u all \

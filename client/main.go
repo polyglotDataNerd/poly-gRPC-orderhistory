@@ -6,8 +6,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/golang/protobuf/proto"
 	p "github.com/polyglotDataNerd/poly-Go-utils/utils"
-	"github.com/sweetgreen/sg-gRPC-orderhistory/client/objects"
-	pb "github.com/sweetgreen/sg-gRPC-orderhistory/definiton"
+	"github.com/polyglotDataNerd/poly-gRPC-orderhistory/client/objects"
+	pb "github.com/polyglotDataNerd/poly-gRPC-orderhistory/definiton"
 	"net/http"
 	"os"
 )

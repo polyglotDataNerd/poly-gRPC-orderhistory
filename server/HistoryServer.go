@@ -6,8 +6,8 @@ import (
 	aws "github.com/polyglotDataNerd/poly-Go-utils/aws"
 	c "github.com/polyglotDataNerd/poly-Go-utils/database"
 	p "github.com/polyglotDataNerd/poly-Go-utils/utils"
-	pb "github.com/sweetgreen/sg-gRPC-orderhistory/definiton"
-	"github.com/sweetgreen/sg-gRPC-orderhistory/utils"
+	pb "github.com/polyglotDataNerd/poly-gRPC-orderhistory/definiton"
+	"github.com/polyglotDataNerd/poly-gRPC-orderhistory/utils"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/keepalive"
 	"net"
@@ -18,13 +18,16 @@ import (
 const (
 	port = ":50051"
 )
+
 type server struct {
 	getServer *pb.SGHistoryServer
 }
+
 var (
-	wg sync.WaitGroup
+	wg      sync.WaitGroup
 	Session *gocql.Session
 )
+
 func init() {
 	Props := p.Mutator{
 		SetterKeyEnv:    "host",

@@ -3,7 +3,7 @@
 gRPC client/server framework using protobuf as alternative to JSON and RESTful services.
 
 Dependencies:
-* [GoLang 1.12.8](https://golang.org/)
+* [GoLang 1.14](https://golang.org/)
 * [GO Utils library](https://github.com/polyglotDataNerd/poly-Go-utils)
 * [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html)
 * [AWS Managed Cassandra Service](https://aws.amazon.com/mcs/)
@@ -25,7 +25,7 @@ TODO: (Verbose Doc) Proof of concept order history service using the universal u
 ![Client](images/GRPC-RESTClient.png)
 
 **Sample Payload from gRPC to REST**
-[orderhistory](https://github.com/sweetgreen/sg-gRPC-orderhistory/blob/master/orderhistory_payload.json)
+[orderhistory](https://github.com/polyglotDataNerd/poly-gRPC-orderhistory/blob/master/orderhistory_payload.json)
 ![orderhistory](images/Payload.png)
    
 *  Run Client

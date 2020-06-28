@@ -126,4 +126,4 @@ fabric.ClientProperties
 *.html
 *.config
 
-*infrastructure/client/*
+*infrastructure/*

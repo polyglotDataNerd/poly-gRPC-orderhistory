@@ -125,3 +125,5 @@ fabric.ClientProperties
 *config.json
 *.html
 *.config
+
+*infrastructure/client/*

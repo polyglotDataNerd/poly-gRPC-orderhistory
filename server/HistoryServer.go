@@ -6,7 +6,7 @@ import (
 	aws "github.com/polyglotDataNerd/poly-Go-utils/aws"
 	c "github.com/polyglotDataNerd/poly-Go-utils/database"
 	p "github.com/polyglotDataNerd/poly-Go-utils/utils"
-	pb "github.com/polyglotDataNerd/poly-gRPC-orderhistory/definiton"
+	pb "github.com/polyglotDataNerd/poly-gRPC-orderhistory/definition"
 	"github.com/polyglotDataNerd/poly-gRPC-orderhistory/utils"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/keepalive"

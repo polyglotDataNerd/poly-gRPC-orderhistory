@@ -3,7 +3,7 @@ package objects
 import (
 	"context"
 	sgutils "github.com/polyglotDataNerd/poly-Go-utils/utils"
-	pb "github.com/polyglotDataNerd/poly-gRPC-orderhistory/definiton"
+	pb "github.com/polyglotDataNerd/poly-gRPC-orderhistory/definition"
 	"github.com/polyglotDataNerd/poly-gRPC-orderhistory/utils"
 	"google.golang.org/grpc"
 	"io"

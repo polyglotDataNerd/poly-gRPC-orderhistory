@@ -7,7 +7,7 @@ import (
 	"github.com/golang/protobuf/proto"
 	p "github.com/polyglotDataNerd/poly-Go-utils/utils"
 	"github.com/polyglotDataNerd/poly-gRPC-orderhistory/client/objects"
-	pb "github.com/polyglotDataNerd/poly-gRPC-orderhistory/definiton"
+	pb "github.com/polyglotDataNerd/poly-gRPC-orderhistory/definition"
 	"net/http"
 	"os"
 )
